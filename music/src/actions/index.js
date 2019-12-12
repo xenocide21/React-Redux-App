@@ -7,7 +7,7 @@ export const FETCH_PLAYLIST_FAILURE = 'FETCH_PLAYLIST_FAILURE';
 export const getPlaylist = (genre) => dispatch => {
     dispatch({ type: GET_PLAYLIST_START });
     axios
-        .get(`https://openwhyd.org/hot/${genre}?format=json`)
+        .get(`https://cors-anywhere.herokuapp.com/https://openwhyd.org/hot/${genre}?format=json`)
         .then(r => {
             console.log(r.data.tracks)
             dispatch({ type: GET_PLAYLIST_SUCCESS, payload: r.data.tracks });
