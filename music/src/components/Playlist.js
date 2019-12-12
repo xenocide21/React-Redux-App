@@ -21,24 +21,27 @@ const Playlist = ({ getPlaylist, playlist, isFetching }) => {
     }
 
     return(
-        <div  className='playlist'>
-            <form>
-                <input
-                    type='text'
-                    value={listGenre}
-                    // onChange={handleChange}
-                />
-                <button onClick={handleSelect}>
-                    Get My Playlist
-                </button>
-            </form>
-            {playlist.map(track => {
-                return <div className='track-card'>
-                    <h3>{track.name}</h3>
-                    <img src={track.img} alt=''/>
-                    <a href={'http://youtu.be' + track.eId.slice(3)} target='blank'>Listen Now</a>
-                </div>
-            })}
+        <div className='card-container'>
+            {/*form is not working currently, thus commented out*/}
+            {/*<form>*/}
+            {/*    <input*/}
+            {/*        type='text'*/}
+            {/*        value={listGenre}*/}
+            {/*        // onChange={handleChange}*/}
+            {/*    />*/}
+            {/*    <button onClick={handleSelect}>*/}
+            {/*        Get My Playlist*/}
+            {/*    </button>*/}
+            {/*</form>*/}
+            <div  className='playlist'>
+                {playlist.map(track => {
+                    return <div className='track-card'>
+                        <h3>{track.name}</h3>
+                        <img src={track.img} alt=''/>
+                        <a href={'http://youtu.be' + track.eId.slice(3)} target='blank'>Listen Now</a>
+                    </div>
+                })}
+            </div>
         </div>
     )
 }
